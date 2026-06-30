@@ -1,0 +1,46 @@
+
+
+public async Task<OrderResult> PlaceOrder(PlaceOrderRequest request)
+{
+    // Save Order 
+    var order = new Order(request);
+    await _db.Orders.SaveChange(order);
+    await _db.SaveCangesAsync();
+
+
+    // Send request to restuant service
+
+    var restuantServiceOrderResponse = await _resurantClient.PlaceOrder(order);
+    if(!restuantServiceOrderResponse.Accepted)
+    {
+        OrderResult.Rejected("Resturant Declined your order");
+    }
+
+    var deliveryServiceOrderResponse = await _resurantClient.PlaceOrder(order);
+    if(!deliveryServiceOrderResponse.Accepted)
+    {
+        OrderResult.Rejected("Delivery Declined your order");
+    }
+
+
+    await notificationService.SendSMS(request.phone, "Your order is confirmed");
+
+    await loyaltyClient.AwardPoints(request.CustomerId, request.Total);
+
+    await analticsService.RecordOrder(order);
+
+    return OrderResult.Confirmed(order);
+
+}
+
+
+/*
+OrderService 300ms
+ResturantService 200ms
+DeliveryService 400ms
+NotificationService 100ms
+LoyaltyService 200ms
+AnalyiticsService 200ms
+===========================
+1400ms
+*/
