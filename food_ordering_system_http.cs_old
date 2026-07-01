@@ -5,6 +5,7 @@ public async Task<OrderResult> PlaceOrder(PlaceOrderRequest request)
     // Save Order 
     var order = new Order(request);
     await _db.Orders.SaveChange(order);
+    await _db.Events.Add(new OrderEvent(order));
     await _db.SaveCangesAsync();
 
 
@@ -16,12 +17,13 @@ public async Task<OrderResult> PlaceOrder(PlaceOrderRequest request)
         OrderResult.Rejected("Resturant Declined your order");
     }
 
-    var deliveryServiceOrderResponse = await _resurantClient.PlaceOrder(order);
+    var deliveryServiceOrderResponse = await _deliveryClient.PlaceOrder(order);
     if(!deliveryServiceOrderResponse.Accepted)
     {
         OrderResult.Rejected("Delivery Declined your order");
     }
 
+    _paymentService.WithdrawPayment(order);
 
     await notificationService.SendSMS(request.phone, "Your order is confirmed");
 

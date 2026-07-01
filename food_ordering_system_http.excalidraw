@@ -94,8 +94,8 @@
     {
       "id": "8YnxeWaXaQ45pLgwnahwB",
       "type": "rectangle",
-      "x": 765.833251953125,
-      "y": 201.8098602294922,
+      "x": 796.1855648653134,
+      "y": 229.02923277218088,
       "width": 220.83331298828125,
       "height": 136.9921875,
       "angle": 0,
@@ -113,8 +113,8 @@
         "type": 3
       },
       "seed": 1115219362,
-      "version": 185,
-      "versionNonce": 2117240318,
+      "version": 201,
+      "versionNonce": 1459633022,
       "isDeleted": false,
       "boundElements": [
         {
@@ -126,15 +126,15 @@
           "type": "arrow"
         }
       ],
-      "updated": 1782820085269,
+      "updated": 1782828949929,
       "link": null,
       "locked": false
     },
     {
       "id": "jRW479M5XQLN7YbRIceqB",
       "type": "text",
-      "x": 788.9999847412109,
-      "y": 257.8059539794922,
+      "x": 819.3522976533993,
+      "y": 285.0253265221809,
       "width": 174.49984741210938,
       "height": 25,
       "angle": 0,
@@ -150,11 +150,11 @@
       "index": "a3",
       "roundness": null,
       "seed": 256893282,
-      "version": 168,
-      "versionNonce": 1922202466,
+      "version": 184,
+      "versionNonce": 2091391934,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1782814618267,
+      "updated": 1782828949929,
       "link": null,
       "locked": false,
       "text": "Resturant Service",
@@ -385,9 +385,9 @@
       "id": "d1i7iZ5g71mj7uknb_IE3",
       "type": "arrow",
       "x": 529.1817572592895,
-      "y": 259.369904038777,
-      "width": 233.83302236764587,
-      "height": 10.96904588874014,
+      "y": 263.2260966700161,
+      "width": 264.18533527983413,
+      "height": 27.999955584557142,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -403,8 +403,8 @@
         "type": 2
       },
       "seed": 881272034,
-      "version": 167,
-      "versionNonce": 1260314594,
+      "version": 183,
+      "versionNonce": 451539966,
       "isDeleted": false,
       "boundElements": [
         {
@@ -412,7 +412,7 @@
           "id": "yp4Z9Qm1gxhoLX9p-KF9V"
         }
       ],
-      "updated": 1782820085270,
+      "updated": 1782828949930,
       "link": null,
       "locked": false,
       "points": [
@@ -421,8 +421,8 @@
           0
         ],
         [
-          233.83302236764587,
-          10.96904588874014
+          264.18533527983413,
+          27.999955584557142
         ]
       ],
       "lastCommittedPoint": null,
